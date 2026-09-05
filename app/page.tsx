@@ -13,10 +13,8 @@ export default function Home() {
 
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
   const [editingText, setEditingText] = useState("");
-
   const completedTasks = tasks.filter((task) => task.completed).length;
   const pendingTasks = tasks.length - completedTasks;
-  
   const addTask = () => {
     if (newTask.trim() === "") return;
 
@@ -188,18 +186,27 @@ export default function Home() {
 
           </div>
 
-          {tasks.length > 0 && (
-            <div className="mt-8 border-t border-slate-200 pt-5 text-sm text-slate-500">
-              Total de tareas:{" "}
-              <span className="font-semibold text-slate-700">
+        {tasks.length > 0 && (
+            <div className="mt-8 flex flex-wrap gap-6 border-t border-slate-200 pt-5 text-sm text-slate-500">
+             <div>
+               Total de tareas:{" "}
+               <span className="font-semibold text-slate-700">
                 {tasks.length}
-              </span>
+               </span>
+             </div>
+
+              <div>
+                Completadas:{" "}
+                <span className="font-semibold text-teal-600">
+                 {completedTasks}
+                </span>
+               </div>
+
+               <div>
+                 Pendientes:{" "}
+                 <span className="font-semibold text-slate-700">
+                   {pendingTasks}
+                 </span>
+               </div>
             </div>
-          )}
-
-        </section>
-
-      </div>
-    </main>
-  );
-}
+)}
