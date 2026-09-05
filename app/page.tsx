@@ -13,8 +13,10 @@ export default function Home() {
 
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
   const [editingText, setEditingText] = useState("");
+
   const completedTasks = tasks.filter((task) => task.completed).length;
   const pendingTasks = tasks.length - completedTasks;
+  
   const addTask = () => {
     if (newTask.trim() === "") return;
 
@@ -69,10 +71,8 @@ export default function Home() {
     <main className="min-h-screen bg-slate-100 px-4 py-10 text-slate-800">
       <div className="mx-auto max-w-4xl">
 
-        {/* principal */}
         <section className="rounded-2xl border-2 border-slate-700 bg-white p-6 shadow-sm sm:p-10">
 
-          {/* titulo */}
           <div className="mb-8 border-b border-slate-300 pb-6">
             <h1 className="font-serif text-3xl font-bold tracking-wide sm:text-4xl">
               MIS TAREAS
@@ -83,7 +83,6 @@ export default function Home() {
             </p>
           </div>
 
-          {/* agg tarea */}
           <div className="mb-6">
             <input
               type="text"
@@ -103,7 +102,6 @@ export default function Home() {
             </p>
           </div>
 
-          {/* lista*/}
           <div className="space-y-3">
 
             {tasks.length === 0 && (
@@ -122,10 +120,8 @@ export default function Home() {
                 }`}
               >
 
-                {/* izquierda */}
                 <div className="flex min-w-0 flex-1 items-center gap-4">
 
-                  {/*boton*/}
                   <button
                     onClick={() => toggleTask(index)}
                     className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-2 text-lg transition ${
@@ -138,7 +134,6 @@ export default function Home() {
                     ✓
                   </button>
 
-                  {/* editar */}
                   {editingIndex === index ? (
                     <input
                       type="text"
@@ -179,7 +174,6 @@ export default function Home() {
 
                 </div>
 
-                {/* eliminar */}
                 <button
                   onClick={() => deleteTask(index)}
                   className="ml-4 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg text-xl text-slate-400 transition hover:bg-red-50 hover:text-red-500"
@@ -194,7 +188,6 @@ export default function Home() {
 
           </div>
 
-          {/* info*/}
           {tasks.length > 0 && (
             <div className="mt-8 border-t border-slate-200 pt-5 text-sm text-slate-500">
               Total de tareas:{" "}
