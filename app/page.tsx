@@ -14,6 +14,9 @@ export default function Home() {
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
   const [editingText, setEditingText] = useState("");
 
+  const completedTasks = tasks.filter((task) => task.completed).length;
+  const pendingTasks = tasks.length - completedTasks;
+
   const addTask = () => {
     if (newTask.trim() === "") return;
 
@@ -68,10 +71,8 @@ export default function Home() {
     <main className="min-h-screen bg-black px-4 py-10 text-slate-100">
       <div className="mx-auto max-w-4xl">
 
-        
         <section className="rounded-2xl border-2 border-slate-700 bg-slate-900 p-6 shadow-sm sm:p-10">
 
-          
           <div className="mb-8 border-b border-slate-700 pb-6">
             <h1 className="font-serif text-3xl font-bold tracking-wide sm:text-4xl">
               MI LISTA DE TAREAS
@@ -82,7 +83,6 @@ export default function Home() {
             </p>
           </div>
 
-          
           <div className="mb-6">
             <input
               type="text"
@@ -102,7 +102,6 @@ export default function Home() {
             </p>
           </div>
 
-          
           <div className="space-y-3">
 
             {tasks.length === 0 && (
@@ -120,11 +119,8 @@ export default function Home() {
                     : "border-slate-700 bg-slate-800 hover:border-teal-400 hover:bg-slate-700"
                 }`}
               >
-
-                
                 <div className="flex min-w-0 flex-1 items-center gap-4">
 
-                  
                   <button
                     onClick={() => toggleTask(index)}
                     className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-2 text-lg transition ${
@@ -137,7 +133,6 @@ export default function Home() {
                     ✓
                   </button>
 
-                  
                   {editingIndex === index ? (
                     <input
                       type="text"
@@ -170,15 +165,14 @@ export default function Home() {
                         {task.text}
                       </p>
 
-                       <p className="mt-1 hidden text-xs text-teal-600 group-hover:block">
-                           Doble clic para editar
-                        </p>
-
+                      <p className="mt-1 hidden text-xs text-teal-600 group-hover:block">
+                        Doble clic para editar
+                      </p>
                     </div>
                   )}
 
                 </div>
-                
+
                 <button
                   onClick={() => deleteTask(index)}
                   className="ml-4 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg text-xl text-slate-400 transition hover:bg-red-50 hover:text-red-500"
@@ -193,18 +187,32 @@ export default function Home() {
 
           </div>
 
-         
           {tasks.length > 0 && (
             <div className="mt-8 border-t border-slate-700 pt-5 text-sm text-slate-400">
-              Total de tareas:{" "}
-              <span className="font-semibold text-slate-200">
-                {tasks.length}
-              </span>
+              <p>
+                Total de tareas:{" "}
+                <span className="font-semibold text-slate-200">
+                  {tasks.length}
+                </span>
+              </p>
+
+              <p>
+                Tareas completadas:{" "}
+                <span className="font-semibold text-teal-400">
+                  {completedTasks}
+                </span>
+              </p>
+
+              <p>
+                Tareas pendientes:{" "}
+                <span className="font-semibold text-slate-200">
+                  {pendingTasks}
+                </span>
+              </p>
             </div>
           )}
 
         </section>
-
       </div>
     </main>
   );
