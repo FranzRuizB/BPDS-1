@@ -65,19 +65,19 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-slate-100 px-4 py-10 text-slate-800">
+    <main className="min-h-screen bg-black px-4 py-10 text-slate-100">
       <div className="mx-auto max-w-4xl">
 
         
-        <section className="rounded-2xl border-2 border-slate-700 bg-white p-6 shadow-sm sm:p-10">
+        <section className="rounded-2xl border-2 border-slate-700 bg-slate-900 p-6 shadow-sm sm:p-10">
 
           
-          <div className="mb-8 border-b border-slate-300 pb-6">
+          <div className="mb-8 border-b border-slate-700 pb-6">
             <h1 className="font-serif text-3xl font-bold tracking-wide sm:text-4xl">
               MI LISTA DE TAREAS
             </h1>
 
-            <p className="mt-2 text-sm text-slate-500">
+            <p className="mt-2 text-sm text-slate-400">
               Organiza, administra y realiza seguimiento a tus tareas
             </p>
           </div>
@@ -94,7 +94,7 @@ export default function Home() {
                   addTask();
                 }
               }}
-              className="w-full rounded-lg border-2 border-dashed border-slate-500 bg-slate-50 px-5 py-4 text-lg transition focus:border-teal-500 focus:bg-white focus:outline-none"
+              className="w-full rounded-lg border-2 border-dashed border-slate-600 bg-slate-800 px-5 py-4 text-lg text-white transition focus:border-teal-500 focus:bg-slate-800 focus:outline-none"
             />
 
             <p className="mt-2 text-sm text-slate-400">
@@ -106,7 +106,7 @@ export default function Home() {
           <div className="space-y-3">
 
             {tasks.length === 0 && (
-              <div className="rounded-lg border border-dashed border-slate-300 py-10 text-center text-slate-400">
+              <div className="rounded-lg border border-dashed border-slate-700 py-10 text-center text-slate-400">
                 Aún no tienes tareas.
               </div>
             )}
@@ -117,7 +117,7 @@ export default function Home() {
                 className={`group flex items-center justify-between rounded-lg border-2 border-dashed p-4 transition duration-200 sm:p-5 ${
                   task.completed
                     ? "border-teal-300 bg-teal-50"
-                    : "border-slate-200 bg-white hover:border-teal-400 hover:bg-slate-50"
+                    : "border-slate-700 bg-slate-800 hover:border-teal-400 hover:bg-slate-700"
                 }`}
               >
 
@@ -130,7 +130,7 @@ export default function Home() {
                     className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-2 text-lg transition ${
                       task.completed
                         ? "border-teal-500 bg-teal-500 text-white"
-                        : "border-slate-500 bg-white text-transparent hover:border-teal-500"
+                        : "border-slate-500 bg-slate-800 text-transparent hover:border-teal-500"
                     }`}
                     aria-label="Completar tarea"
                   >
@@ -152,7 +152,7 @@ export default function Home() {
                         }
                       }}
                       autoFocus
-                      className="w-full rounded-md border-2 border-teal-500 bg-white px-4 py-2 text-lg outline-none"
+                      className="w-full rounded-md border-2 border-teal-500 bg-slate-800 px-4 py-2 text-lg text-white outline-none"
                     />
                   ) : (
                     <div className="min-w-0 flex-1">
@@ -164,7 +164,7 @@ export default function Home() {
                         className={`cursor-pointer truncate text-lg transition ${
                           task.completed
                             ? "text-slate-500 line-through"
-                            : "text-slate-800"
+                            : "text-slate-100"
                         }`}
                       >
                         {task.text}
@@ -195,9 +195,9 @@ export default function Home() {
 
          
           {tasks.length > 0 && (
-            <div className="mt-8 border-t border-slate-200 pt-5 text-sm text-slate-500">
+            <div className="mt-8 border-t border-slate-700 pt-5 text-sm text-slate-400">
               Total de tareas:{" "}
-              <span className="font-semibold text-slate-700">
+              <span className="font-semibold text-slate-200">
                 {tasks.length}
               </span>
             </div>
