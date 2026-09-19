@@ -71,6 +71,29 @@ export default function Home() {
 
   setTasks(updatedTasks);
 };
+
+
+  const restoreTask = (index: number) => {
+
+    const taskToRestore = deletedTasks[index];
+
+    setTasks([...tasks, taskToRestore]);
+
+    const updatedDeletedTasks = deletedTasks.filter(
+      (_, taskIndex) => taskIndex !== index
+    );
+
+    setDeletedTasks(updatedDeletedTasks);
+  };
+ const permanentlyDeleteTask = (index: number) => {
+  const updatedDeletedTasks = deletedTasks.filter(
+    (_, taskIndex) => taskIndex !== index
+  );
+
+  setDeletedTasks(updatedDeletedTasks);
+};
+
+
   return (
     <main className="min-h-screen bg-black px-4 py-10 text-slate-100">
       <div className="mx-auto max-w-4xl">
@@ -226,17 +249,28 @@ export default function Home() {
                 {deletedTasks.map((task, index) => (
                   <div
                     key={index}
-                    className="rounded-lg border border-slate-700 bg-slate-800 p-4 text-slate-300"
+                    className="flex flex-col gap-3 rounded-lg border border-slate-700 bg-slate-800 p-4 text-slate-300 sm:flex-row sm:items-center sm:justify-between"
                   >
-                    {task.text}
+                    <span>{task.text}</span>
+
+                    <button
+                  
+                      onClick={() => restoreTask(index)}
+                      className="ml-4 rounded-lg bg-teal-600 px-3 py-2 text-sm text-white hover:bg-teal-500"
+                    >
+                      Restaurar
+                    </button>
+                    <button
+  onClick={() => permanentlyDeleteTask(index)}
+  className="ml-2 rounded-lg bg-red-600 px-3 py-2 text-sm text-white hover:bg-red-500"
+>
+  Eliminar definitivamente
+</button>
                   </div>
                 ))}
               </div>
             </div>
           )}
-
-        
-
         </section>
       </div>
     </main>
