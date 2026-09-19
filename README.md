@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+BPDS-1 - Aplicación de Lista de Tareas
+Descripción
 
-## Getting Started
+BPDS-1 es una aplicación web para la gestión y organización de tareas. Permite crear, editar, completar y eliminar tareas, además de contar con una papelera para administrar las tareas eliminadas.
 
-First, run the development server:
+Instalación
+Para instalar las dependencias necesarias del proyecto, ejecutar el siguiente comando:
+npm install
+jecución del proyecto
 
-```bash
+Para ejecutar el proyecto localmente, utilizar:
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Después de ejecutar el comando, abrir en el navegador la dirección local proporcionada por Next.js.
+Funcionalidades principales
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+La aplicación permite:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Crear nuevas tareas.
+Editar tareas existentes.
+Marcar tareas como completadas.
+Eliminar tareas.
+Visualizar las tareas registradas.
+Visualizar el total de tareas.
+Visualizar las tareas completadas.
+Visualizar las tareas pendientes.
+Papelera de tareas
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+La aplicación cuenta con una papelera para almacenar y administrar las tareas eliminadas.
+Cuando una tarea es eliminada, pasa a la papelera en lugar de desaparecer inmediatamente.
+Desde la papelera se pueden realizar las siguientes acciones:
 
-## Learn More
+Visualizar tareas eliminadas: permite consultar las tareas que fueron eliminadas.
+Restaurar tareas: permite devolver una tarea eliminada a la lista principal.
+Eliminar definitivamente: permite eliminar una tarea de forma permanente de la papelera.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Integrantes
+Franz Ruiz
+Alberto Monsalvo
+Esta funcionalidad permite recuperar tareas eliminadas y tener mayor control sobre las tareas que ya no se necesitan.
