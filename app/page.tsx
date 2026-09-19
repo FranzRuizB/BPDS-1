@@ -9,6 +9,7 @@ type Task = {
 
 export default function Home() {
   const [tasks, setTasks] = useState<Task[]>([]);
+  const [deletedTasks, setDeletedTasks] = useState<Task[]>([]);
   const [newTask, setNewTask] = useState("");
 
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
@@ -59,14 +60,17 @@ export default function Home() {
     setTasks(updatedTasks);
   };
 
-  const deleteTask = (index: number) => {
-    const updatedTasks = tasks.filter(
-      (_, taskIndex) => taskIndex !== index
-    );
+ const deleteTask = (index: number) => {
+  const taskToDelete = tasks[index];
 
-    setTasks(updatedTasks);
-  };
+  setDeletedTasks([...deletedTasks, taskToDelete]);
 
+  const updatedTasks = tasks.filter(
+    (_, taskIndex) => taskIndex !== index
+  );
+
+  setTasks(updatedTasks);
+};
   return (
     <main className="min-h-screen bg-black px-4 py-10 text-slate-100">
       <div className="mx-auto max-w-4xl">
@@ -211,6 +215,27 @@ export default function Home() {
               </p>
             </div>
           )}
+          
+            {deletedTasks.length > 0 && (
+            <div className="mt-8 border-t border-slate-700 pt-5">
+              <h2 className="mb-4 text-xl font-semibold text-slate-200">
+                🗑 Papelera
+              </h2>
+
+              <div className="space-y-2">
+                {deletedTasks.map((task, index) => (
+                  <div
+                    key={index}
+                    className="rounded-lg border border-slate-700 bg-slate-800 p-4 text-slate-300"
+                  >
+                    {task.text}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+        
 
         </section>
       </div>
