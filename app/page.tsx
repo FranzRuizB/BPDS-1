@@ -74,6 +74,7 @@ export default function Home() {
 
 
   const restoreTask = (index: number) => {
+
     const taskToRestore = deletedTasks[index];
 
     setTasks([...tasks, taskToRestore]);
@@ -84,7 +85,13 @@ export default function Home() {
 
     setDeletedTasks(updatedDeletedTasks);
   };
+ const permanentlyDeleteTask = (index: number) => {
+  const updatedDeletedTasks = deletedTasks.filter(
+    (_, taskIndex) => taskIndex !== index
+  );
 
+  setDeletedTasks(updatedDeletedTasks);
+};
 
 
   return (
@@ -247,11 +254,18 @@ export default function Home() {
                     <span>{task.text}</span>
 
                     <button
+                  
                       onClick={() => restoreTask(index)}
                       className="ml-4 rounded-lg bg-teal-600 px-3 py-2 text-sm text-white hover:bg-teal-500"
                     >
                       Restaurar
                     </button>
+                    <button
+  onClick={() => permanentlyDeleteTask(index)}
+  className="ml-2 rounded-lg bg-red-600 px-3 py-2 text-sm text-white hover:bg-red-500"
+>
+  Eliminar definitivamente
+</button>
                   </div>
                 ))}
               </div>
