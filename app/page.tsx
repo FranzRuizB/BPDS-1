@@ -9,6 +9,7 @@ type Task = {
 
 export default function Home() {
   const [tasks, setTasks] = useState<Task[]>([]);
+  const [deletedTasks, setDeletedTasks] = useState<Task[]>([]);
   const [newTask, setNewTask] = useState("");
 
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
