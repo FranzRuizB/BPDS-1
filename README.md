@@ -1,7 +1,6 @@
 BPDS-1 - Aplicación de Lista de Tareas
-Descripción
 
-BPDS-1 es una aplicación web para la gestión y organización de tareas. Permite crear, editar, completar y eliminar tareas, además de contar con una papelera para administrar las tareas eliminadas.
+es una aplicación web para la gestión y organización de tareas. Permite crear, editar, completar y eliminar tareas, además de contar con una papelera para administrar las tareas eliminadas.
 
 Instalación
 Para instalar las dependencias necesarias del proyecto, ejecutar el siguiente comando:
@@ -11,8 +10,8 @@ jecución del proyecto
 Para ejecutar el proyecto localmente, utilizar:
 npm run dev
 Después de ejecutar el comando, abrir en el navegador la dirección local proporcionada por Next.js.
-Funcionalidades principales
 
+Funcionalidades principales
 La aplicación permite:
 
 Crear nuevas tareas.
