@@ -32,7 +32,19 @@ Visualizar tareas eliminadas: permite consultar las tareas que fueron eliminadas
 Restaurar tareas: permite devolver una tarea eliminada a la lista principal.
 Eliminar definitivamente: permite eliminar una tarea de forma permanente de la papelera.
 
+
 Integrantes
 Franz Ruiz
 Alberto Monsalvo
 
+
+
+## Evidencia visual
+
+### Lista principal de tareas
+
+![Lista principal de tareas](./Captura%20de%20pantalla%202026-09-19%20102401.png)
+
+### Papelera de tareas
+
+![Papelera de tareas](./Captura%20de%20pantalla%202026-09-19%20102415.png)
