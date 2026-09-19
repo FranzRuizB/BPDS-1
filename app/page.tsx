@@ -60,14 +60,17 @@ export default function Home() {
     setTasks(updatedTasks);
   };
 
-  const deleteTask = (index: number) => {
-    const updatedTasks = tasks.filter(
-      (_, taskIndex) => taskIndex !== index
-    );
+ const deleteTask = (index: number) => {
+  const taskToDelete = tasks[index];
 
-    setTasks(updatedTasks);
-  };
+  setDeletedTasks([...deletedTasks, taskToDelete]);
 
+  const updatedTasks = tasks.filter(
+    (_, taskIndex) => taskIndex !== index
+  );
+
+  setTasks(updatedTasks);
+};
   return (
     <main className="min-h-screen bg-black px-4 py-10 text-slate-100">
       <div className="mx-auto max-w-4xl">
