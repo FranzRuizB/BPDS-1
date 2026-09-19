@@ -35,4 +35,4 @@ Eliminar definitivamente: permite eliminar una tarea de forma permanente de la p
 Integrantes
 Franz Ruiz
 Alberto Monsalvo
-Esta funcionalidad permite recuperar tareas eliminadas y tener mayor control sobre las tareas que ya no se necesitan.
+
