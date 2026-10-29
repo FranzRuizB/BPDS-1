@@ -1,5 +1,6 @@
 BPDS-1 - Aplicación de Lista de Tareas 
 
+
 es una aplicación web para la gestión y organización de tareas. Permite crear, editar, completar y eliminar tareas, además de contar con una papelera para administrar las tareas eliminadas.
 
 Instalación
