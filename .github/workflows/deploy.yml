@@ -2,7 +2,7 @@ name: Publicar sitio en S3
 
 on:
   push:
-    branches: [main, master]
+    branches: [main, master, prod]
   workflow_dispatch:
 
 jobs:
